@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import Modal from './components/modalcomponents/Modal';
+
+const Container = styled.div`
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+`;
+
+const Button = styled.button`
+	width: 25rem;
+	height: 8rem;
+	border: 3px solid #000033;
+	color: #000033;
+	font-size: 2.2rem;
+	font-weight: bold;
+`;
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [showModal, setShowModal] = useState(false);
+
+	const openModal = () => {
+		setShowModal((prev) => !prev);
+	};
+
+	return (
+		<>
+			<Container>
+				<Button onClick={openModal}>KONFIGURATOR SERVISA</Button>
+				<Modal showModal={showModal} setShowModal={setShowModal} />
+			</Container>
+		</>
+	);
 }
 
 export default App;
