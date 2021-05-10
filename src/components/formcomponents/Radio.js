@@ -50,7 +50,7 @@ const RadioContainer = styled.div`
 	flex-direction: column;
 `;
 const Car = styled.p`
-	font-size: 1.7rem;
+	font-size: 1.3rem;
 	color: #000;
 	text-align: center;
 	width: 80%;
